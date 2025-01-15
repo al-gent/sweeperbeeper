@@ -12,9 +12,9 @@ import os
 load_dotenv()
 
 # Access the variables
-API_key = os.getenv("API_key")
-device_id = os.getenv("device_id")
-database_url = os.getenv("database_url")
+API_key = os.getenv("API_KEY")
+device_id = os.getenv("DEVICE_ID")
+database_url = os.getenv("DATABASE_URL")
 
 # load street sweeping schedule
 df = pd.read_csv("SSS.csv")
