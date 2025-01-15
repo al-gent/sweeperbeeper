@@ -1,0 +1,31 @@
+name: Run SweeperBeeper
+
+on:
+  schedule:
+    - cron: "0 4 * * *"  # Run at 4 AM UTC, which is 8 PM PT
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run the Python script
+        env:  # Pass secrets as environment variables
+          API_KEY: ${{ secrets.API_KEY }}
+          DEVICE_ID: ${{ secrets.DEVICE_ID }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python street_sweeping_alert.py
