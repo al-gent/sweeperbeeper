@@ -18,11 +18,8 @@ jobs:
         with:
           python-version: "3.9"
 
-      - name: Set up Conda
-        uses: conda-inc/github-action@v2
-        with:
-          environment-file: environment.yml
-
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       - name: Run the Python script
         env:  # Pass secrets as environment variables
