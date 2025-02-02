@@ -1,0 +1,15 @@
+{
+  "originHash" : "cfd8a70a90b7d4a861a5e039424b4d2cbc750bc01d4326a7c8fa0eb38935a4bb",
+  "pins" : [
+    {
+      "identity" : "swiftlocation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/SwiftLocation.git",
+      "state" : {
+        "revision" : "010073e62cea4daefea61042a51b8619d23cdc35",
+        "version" : "6.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
